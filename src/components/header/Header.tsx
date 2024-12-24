@@ -16,7 +16,7 @@ const Header = () => {
     <header className="sticky z-20 top-0 h-[80px] md:h-[96px] ">
       <div className="h-8 bg-[#5386E4] ">
         <div className="w-11/12 max-w-screen-xl mx-auto ">
-          <div className="flex flex-row gap-[22px] items-center justify-end py-1.5">
+          <div className="hidden sm:flex flex-row gap-[22px] items-center justify-end py-1.5">
             {socialMediaIcons.map((icon, index) => (
               <Link
                 href={icon.url}
