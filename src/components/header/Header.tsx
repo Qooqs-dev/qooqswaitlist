@@ -3,12 +3,36 @@ import Image from "next/image";
 import Link from "next/link";
 
 const socialMediaIcons = [
-  { src: "/icons/facebook.svg", alt: "Facebook Icon", url: "/" },
-  { src: "/icons/twitter.svg", alt: "Twitter Icon", url: "/" },
-  { src: "/icons/instagram.svg", alt: "Instagram Icon", url: "/" },
-  { src: "/icons/linkedin.svg", alt: "LinkedIn Icon", url: "/" },
-  { src: "/icons/tiktok.svg", alt: "TikTok Icon", url: "/" },
-  { src: "/icons/youtube.svg", alt: "Youtube Icon", url: "/" },
+  {
+    src: "/icons/facebook.svg",
+    alt: "Facebook Icon",
+    url: "https://www.facebook.com/share/19cUCmCdjc/",
+  },
+  {
+    src: "/icons/twitter.svg",
+    alt: "Twitter Icon",
+    url: "https://x.com/qooqsuk",
+  },
+  {
+    src: "/icons/instagram.svg",
+    alt: "Instagram Icon",
+    url: "https://www.instagram.com/qooqsuk/",
+  },
+  {
+    src: "/icons/linkedin.svg",
+    alt: "LinkedIn Icon",
+    url: "https://www.linkedin.com/company/qooqs/",
+  },
+  {
+    src: "/icons/tiktok.svg",
+    alt: "TikTok Icon",
+    url: "https://www.tiktok.com/@qooqsuk",
+  },
+  {
+    src: "/icons/youtube.svg",
+    alt: "Youtube Icon",
+    url: "https://www.youtube.com/channel/UCFSa3xVkLB39Mvexk7FSXwA",
+  },
 ];
 
 const Header = () => {
