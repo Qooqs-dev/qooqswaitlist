@@ -61,15 +61,14 @@ const Header = () => {
         </div>
       </div>
       <div className="h-16 bg-[#F4F4F4] ">
-        <div className="w-11/12 max-w-screen-xl mx-auto  flex  py-5">
-          {/* <Image
-            src={"/icons/qooqs-logo1.png"}
+        <div className="w-11/12 max-w-screen-xl mx-auto  flex py-1.5">
+          <Image
+            src={"/icons/qooqs-logo2.png"}
             alt={"Qooqs Logo"}
             width={200}
             height={20}
-           className="w-[200px] h-auto"
-          /> */}
-          Logo
+            className="w-auto h-[52px]"
+          />
         </div>
       </div>
     </header>

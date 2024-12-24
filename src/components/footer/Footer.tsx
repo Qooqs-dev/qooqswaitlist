@@ -40,11 +40,11 @@ const Footer = () => {
       <div className="flex flex-col sm:flex-row gap-[50px] sm:gap-[100px] lg:gap-[200px]  mb-[50px] sm:mb-[70px]">
         <div className="flex flex-col gap-5">
           <Image
-            src={"/icons/footer-icon.svg"}
-            alt={"C Icon"}
-            width={32}
-            height={32}
-            className="cursor-pointer"
+            src={"/icons/qooqs-logo2.png"}
+            alt={"Qooqs Logo"}
+            width={200}
+            height={52}
+            className="w-[117px] h-[52px] mb-4"
           />
           <div className="flex flex-row gap-4">
             {socialMediaIcons.map((icon, index) => (

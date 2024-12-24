@@ -1,33 +1,39 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 
 // Metadata for the entire app
 export const metadata: Metadata = {
-  title: "Qooqs",
+  title: "QOOQS",
   description:
-    "Discover the future of advertising! Seamlessly create and manage ad campaigns, maximize reach, and engage your audience with our innovative platform.",
+    "Your affordable and fresh Asian, African & Caribbean groceries with free delivery.",
   keywords: [
-    "You earn while at it",
-    "advertising",
-    "ad campaigns",
-    "business advertising",
-    "dynamic ads",
-    "audience engagement",
-    "innovative platform",
-    "user-friendly ads",
-    "maximize reach",
-    "future of advertising",
-    "seamless advertising",
+    "African shop",
+    "Asian shop",
+    "Corner shop",
+    "African shop near me",
+    "Wholesale African shop",
+    "Bulk African shop",
+    "Asian supermarket",
+    "Local African shop",
+    "Grocery free delivery",
+    "Nigerian food",
+    "Indian food",
+    "Pakistani food", 
+    "Ethnic food store",
+    "Online African grocery",
+    "Wholesale groceries online",
+    "Bulk buying shop",
+     "Caribbean shop",
+     "Bulk grocery store",
+
   ],
   openGraph: {
-    title: "Hivenify",
+    title: "QOOQS",
     description:
-      "Discover the future of advertising! Seamlessly create and manage ad campaigns, maximize reach, and engage your audience with our innovative platform.",
+      "Your affordable and fresh Asian, African & Caribbean groceries with free delivery.",
     url: "https://www.hivenify.com",
-    siteName: "Hivenify",
+    siteName: "QOOQS",
     images: [
       {
         url: "https://www.hivenify.com/icons/hivenify-logo.svg",
@@ -38,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hivenify",
+    title: "QOOQS",
     description:
-      "Discover the future of advertising! Seamlessly create and manage ad campaigns, maximize reach, and engage your audience with our innovative platform.",
+      "Your affordable and fresh Asian, African & Caribbean groceries with free delivery.",
     images: ["https://www.hivenify.com/icons/hivenify-logo.svg"],
   },
   icons: {
