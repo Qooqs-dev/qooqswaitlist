@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     images: ["https://www.hivenify.com/icons/hivenify-logo.svg"],
   },
   icons: {
-    icon: "/icons/qooqs-logo.png",
+    icon: "/icons/qooqs-favicon.png",
   },
 };
 

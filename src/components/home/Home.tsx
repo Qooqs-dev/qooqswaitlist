@@ -1,11 +1,23 @@
-import React from 'react'
+import React from "react";
 
 const Home = () => {
   return (
     <div>
-      Here
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
+      <div className="my-[400px]">NNNN</div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
