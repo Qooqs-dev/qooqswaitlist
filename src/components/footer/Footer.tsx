@@ -68,14 +68,14 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <h4 className="text-[#1E1E1E] text-lg">Company</h4>
 
-          <ul className="flex flex-col gap-4 text-[#727272] text-[17px]">
-            <li className="">
+          <ul className="flex flex-col gap-4  text-[17px]">
+            <li className="hover:text-[#393939] text-[#727272]">
               <Link href={"/terms"}>Terms & Condition</Link>{" "}
             </li>
-            <li className="">
+            <li className="hover:text-[#393939] text-[#727272]">
               <Link href={"/privacy"}>Privacy Policy</Link>{" "}
             </li>
-            <li className="">
+            <li className="hover:text-[#393939] text-[#727272]">
               <Link href={"/cookies"}>Cookies Policy</Link>{" "}
             </li>
             {/* <li className="">

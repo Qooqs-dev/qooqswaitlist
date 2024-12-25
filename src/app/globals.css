@@ -13,3 +13,22 @@
 body {
   font-family: "Frutiger LT Pro", Arial, Helvetica, sans-serif;
 }
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #303ebc3e;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5386E4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5386E4;
+}

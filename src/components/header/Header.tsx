@@ -62,13 +62,15 @@ const Header = () => {
       </div>
       <div className="h-14 sm:h-16 bg-[#F4F4F4] ">
         <div className="w-11/12 max-w-screen-xl mx-auto flex py-2 sm:py-1.5">
-          <Image
-            src={"/icons/qooqs-logo2.png"}
-            alt={"Qooqs Logo"}
-            width={200}
-            height={20}
-            className="w-auto h-[40px] sm:h-[52px]"
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/icons/qooqs-logo2.png"}
+              alt={"Qooqs Logo"}
+              width={200}
+              height={20}
+              className="w-auto h-[40px] sm:h-[52px]"
+            />
+          </Link>
         </div>
       </div>
     </header>
