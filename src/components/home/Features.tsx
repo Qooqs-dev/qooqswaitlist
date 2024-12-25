@@ -37,7 +37,7 @@ const features = [
 const Features = () => {
   return (
     <div className="w-11/12 max-w-screen-xl mx-auto flex flex-col gap-14 mt-[70px] mb-[70px] sm:mb-[140px]">
-      <h2 className="text-[26px] sm:text-[50px] font-extrabold text-black text-center sm:text-left w-full sm:w-3/4 leading-tight">
+      <h2 className="text-[26px] md:text-[35px] lg:text-[40px] xl:text-[45px] 2xl:text-[50px] font-extrabold text-black text-center sm:text-left w-full sm:w-3/4 leading-tight">
         You are not just buying fresh groceries at affordable prices with free
         delivery - you are being empowered 😃.
       </h2>

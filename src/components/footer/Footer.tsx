@@ -44,7 +44,7 @@ const Footer = () => {
             alt={"Qooqs Logo"}
             width={200}
             height={52}
-            className="w-[117px] h-[52px] mb-4"
+            className="w-[90px] sm:w-[117px] h-[40px] sm:h-[52px] mb-4"
           />
           <div className="flex flex-row gap-4">
             {socialMediaIcons.map((icon, index) => (
@@ -71,7 +71,7 @@ const Footer = () => {
           <ul className="flex flex-col gap-4 text-[#727272] text-[17px]">
             <li className="">
               {" "}
-              <Link href={"/"}>Terms & Privacy</Link>{" "}
+              <Link href={"/terms"}>Terms & Privacy</Link>{" "}
             </li>
             <li className="">
               <Link href={"/"}>English</Link>{" "}

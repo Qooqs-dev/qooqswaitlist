@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     title: "QOOQS",
     description:
       "Your affordable and fresh Asian, African & Caribbean groceries with free delivery.",
-    url: "https://www.hivenify.com",
+    url: "http://qooqs.co.uk/",
     siteName: "QOOQS",
     images: [
       {
-        url: "https://www.hivenify.com/icons/hivenify-logo.svg",
-        alt: "Hivenify Logo",
+        url: "http://qooqs.co.uk/icons/qooqs-logo2.png",
+        alt: "Qooqs Logo",
       },
     ],
     type: "website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "QOOQS",
     description:
       "Your affordable and fresh Asian, African & Caribbean groceries with free delivery.",
-    images: ["https://www.hivenify.com/icons/hivenify-logo.svg"],
+    images: ["http://qooqs.co.uk/icons/qooqs-logo2.png"],
   },
   icons: {
     icon: "/icons/qooqs-favicon.png",
