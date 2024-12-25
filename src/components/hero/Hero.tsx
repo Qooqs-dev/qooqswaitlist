@@ -1,13 +1,17 @@
 import React from "react";
 import Image from "next/image";
 
-const Hero = () => {
+interface HeroProps {
+  title: string;
+}
+
+const Hero: React.FC<HeroProps> = ({ title }) => {
   return (
     <div className="bg-[#5386E4]">
       <div className="w-11/12 max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center gap-14">
         <div className="flex flex-col justify-center items-center gap-5 w-full h-[196px] sm:h-[367px] relative ">
           <h2 className="z-10 text-white text-[32px] md:text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[70px] leading-tight font-extrabold">
-            Terms and Privacy
+            {title}
           </h2>
 
           <Image

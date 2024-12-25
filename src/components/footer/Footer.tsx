@@ -70,12 +70,17 @@ const Footer = () => {
 
           <ul className="flex flex-col gap-4 text-[#727272] text-[17px]">
             <li className="">
-              {" "}
-              <Link href={"/terms"}>Terms & Privacy</Link>{" "}
+              <Link href={"/terms"}>Terms & Condition</Link>{" "}
             </li>
             <li className="">
-              <Link href={"/"}>English</Link>{" "}
+              <Link href={"/privacy"}>Privacy Policy</Link>{" "}
             </li>
+            <li className="">
+              <Link href={"/cookies"}>Cookies Policy</Link>{" "}
+            </li>
+            {/* <li className="">
+              <Link href={"/"}>English</Link>{" "}
+            </li> */}
           </ul>
         </div>
       </div>

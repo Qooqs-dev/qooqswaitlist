@@ -1,14 +1,14 @@
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import Hero from "@/components/hero/Hero";
-import TermsDetails from "./TermsDetails";
+import CookiesPolicyDetails from "./CookiesPolicyDetails";
 
 export default function Page() {
   return (
     <main>
       <Header />
-      <Hero title = {"Terms and Conditions"} />
-      <TermsDetails />
+      <Hero title={"Cookies Policy"} />
+      <CookiesPolicyDetails />
       <Footer />
     </main>
   );
