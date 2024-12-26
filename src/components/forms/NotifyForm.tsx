@@ -26,34 +26,6 @@ const validationSchema = Yup.object({
     .required("Email is required"),
 });
 
-const notifyUser = async (email: string) => {
-  try {
-    const res = await axios.post(`${baseUrl}/waitlist/join`, {
-      email,
-      referralCode,
-    });
-
-    if (res.status === 200) {
-      toast.success(res.data.message);
-      if (typeof window !== "undefined") {
-        window.location.replace(res.data.data.link);
-      }
-    } else {
-      toast.error("Failed to subscribe. Please try again.");
-    }
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      // Handle Axios errors
-      toast.error(
-        error.response?.data?.message || "An error occurred. Please try again."
-      );
-    } else {
-      // Handle non-Axios errors
-      toast.error("An unexpected error occurred. Please try again.");
-    }
-  }
-};
-
 export default function NotifyMeForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [waitlistData, setWaitlistData] = useState<WaitlistResponse | null>(

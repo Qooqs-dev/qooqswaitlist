@@ -7,7 +7,7 @@ const PrivacyPolicyDetails = () => {
         {/* Header */}
         <div>
           <p className="text-lg">
-            Qooqs Operating Company Ltd (&quot;we,&quot; &quot;us,&quot; or "&quot;our&quot;) is committed to
+            Qooqs Operating Company Ltd (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to
             protecting your personal data and respecting your privacy. This
             Privacy Policy explains how we collect, use, store, and protect your
             information when you participate in our waitlist campaign. It also
@@ -199,7 +199,7 @@ const PrivacyPolicyDetails = () => {
             <p className="text-lg">
               Our website uses cookies to improve user experience and track
               campaign performance. For more details, see our{" "}
-              <a href="[Insert Link]" className="text-blue-500 underline">
+              <a href="/cookies" className="text-blue-500 underline">
                 Cookie Policy
               </a>
               .
@@ -243,10 +243,10 @@ const PrivacyPolicyDetails = () => {
             </ul>
           </div>
 
-          {/* ]Acceptance of Privacy Policy */}
+          {/* Acceptance of Privacy Policy */}
           <div>
             <h5 className="font-bold text-lg mb-2">
-              ]Acceptance of Privacy Policy
+              Acceptance of Privacy Policy
             </h5>
             <p className="text-lg">
               By participating in our waitlist campaign, you acknowledge that
