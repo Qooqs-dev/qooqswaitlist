@@ -66,16 +66,19 @@ export default function NotifyMeForm() {
         toast.error("Failed to subscribe. Please try again.");
       }
     } catch (error) {
-        if (axios.isAxiosError(error)) {
-          // Handle Axios-specific errors
-          console.log(error);
-          console.log(error.response?.data?.response?.message);
-          toast.error(error.response?.data?.response?.message || "An error occurred");
-        } else {
-          // Handle non-Axios errors
-          console.error("Unexpected error:", error);
-          toast.error("An unexpected error occurred. Please try again.");
-        }
+      if (axios.isAxiosError(error)) {
+        // Handle Axios-specific errors
+        console.log(error);
+        console.log(error.response?.data?.response?.message);
+        toast.error(
+          error.response?.data?.response?.message || "An error occurred"
+        );
+      } else {
+        // Handle non-Axios errors
+        console.error("Unexpected error:", error);
+        toast.error("An unexpected error occurred. Please try again.");
+      }
+    }
   };
 
   return (
