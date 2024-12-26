@@ -185,11 +185,11 @@ export default function WaitlistModal({
             <h3 className="font-bold text-lg text-center mb-3">LEADERBOARD</h3>
             <div className="max-h-36 overflow-y-auto">
               <table className="w-full">
-                <thead className="sticky top-0 bg-white text-left text-gray-500 border-b">
+                <thead className="sticky top-0 bg-white text-[15px] text-left text-gray-500 border-b">
                   <tr>
                     <th className="pb-2">RANK</th>
                     <th className="pb-2">USERID</th>
-                    <th className="pb-2">REFERRAL CODE</th>
+                    {/* <th className="pb-2">REFERRAL CODE</th> */}
                     <th className="pb-2">NO OF REFERRALS</th>
                   </tr>
                 </thead>
@@ -202,7 +202,7 @@ export default function WaitlistModal({
                         {/* Assign rank based on index */}
                         <td className="py-2">{item._id.slice(0, 5)}...</td>
                         {/* <td className="py-2">{item.email}</td> */}
-                        <td className="py-2">{item.referralCode}</td>
+                        {/* <td className="py-2">{item.referralCode}</td> */}
                         <td className="py-2">{item.referralsCount}</td>
                       </tr>
                     ))}
