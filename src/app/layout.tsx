@@ -33,11 +33,11 @@ export const metadata: Metadata = {
     title: "QOOQS",
     description:
       "Your affordable and fresh Asian, African & Caribbean groceries with free delivery.",
-    url: "https://qooqs.co.uk/",
+    url: "https://www.qooqs.co.uk/",
     siteName: "QOOQS",
     images: [
       {
-        url: "https://qooqs.co.uk/icons/qooqs-logo2.png",
+        url: "https://www.qooqs.co.uk/icons/qooqs-favicon2.png",
         alt: "Qooqs Logo",
       },
     ],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "QOOQS",
     description:
       "Your affordable and fresh Asian, African & Caribbean groceries with free delivery.",
-    images: ["https://qooqs.co.uk/icons/qooqs-logo2.png"],
+    images: ["https://www.qooqs.co.uk/icons/qooqs-favicon2.png"],
   },
   icons: {
     icon: "/icons/qooqs-favicon2.png",
