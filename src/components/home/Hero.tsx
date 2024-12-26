@@ -38,7 +38,7 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row gap-2 items-center">
             <Image
               src={"/icons/hero-star.svg"}
               alt={`Hero Star Icon`}
@@ -65,7 +65,7 @@ const Hero = () => {
                 </svg>
               </span>
             </p>
-          </div> */}
+          </div>
         </div>
         <div>
           <Image

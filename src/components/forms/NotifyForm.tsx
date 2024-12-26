@@ -5,20 +5,9 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import WaitlistModal from "../modal/WaitlistModal";
-// import { useSearchParams } from "next/navigation";
+import { WaitlistData } from "../../../types/waitlist.types";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
-interface WaitlistResponse {
-  position: number;
-  referralLink: string;
-  referralCount: number;
-  leaderBoard: Array<{
-    rank: number;
-    userId: string;
-    referrals: number;
-  }>;
-}
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -29,31 +18,13 @@ const validationSchema = Yup.object({
 export default function NotifyMeForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [referralCode, setReferralCode] = useState<string | null>(null);
-  const [waitlistData, setWaitlistData] = useState<WaitlistResponse | null>(
-    null
-  );
+  const [waitlistData, setWaitlistData] = useState<WaitlistData | null>(null);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("referralCode");
     setReferralCode(code);
   }, []);
-
-  //   const notifyUser = async (email: string) => {
-  //     setIsModalOpen(true);
-  //     setWaitlistData({
-  //       position: 4,
-  //       referralLink: "321",
-  //       referralCount: 18,
-  //       leaderBoard: [
-  //         {
-  //           rank: 1,
-  //           userId: "de21",
-  //           referrals: 7,
-  //         },
-  //       ],
-  //     });
-  //   };
 
   const notifyUser = async (email: string) => {
     try {
@@ -63,9 +34,13 @@ export default function NotifyMeForm() {
       });
 
       if (res.status === 200) {
-        console.log(res.data);
+
+        setIsModalOpen(true);
         toast.success(res.data.response.message);
-        setWaitlistData(null);
+        setWaitlistData(res.data.response.data);
+
+        console.log(res.data.response.data);
+
       } else {
         toast.error("Failed to subscribe. Please try again.");
       }
@@ -128,10 +103,7 @@ export default function NotifyMeForm() {
         <WaitlistModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          position={waitlistData.position}
-          referralLink={waitlistData.referralLink}
-          referralCount={waitlistData.referralCount}
-          leaderBoard={waitlistData.leaderBoard}
+          WaitlistData={waitlistData}
         />
       )}
     </div>

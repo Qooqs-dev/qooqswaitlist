@@ -3,27 +3,18 @@
 import { X, Copy, PartyPopper } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { WaitlistData } from "../../../types/waitlist.types";
 
 interface WaitlistModalProps {
   isOpen: boolean;
   onClose: () => void;
-  position: number;
-  referralLink: string;
-  referralCount: number;
-  leaderBoard: Array<{
-    rank: number;
-    userId: string;
-    referrals: number;
-  }>;
+  WaitlistData: WaitlistData;
 }
 
 export default function WaitlistModal({
   isOpen,
   onClose,
-  position,
-  referralLink,
-  referralCount,
-  leaderBoard,
+  WaitlistData,
 }: WaitlistModalProps) {
   const [copied, setCopied] = useState(false);
 
@@ -31,8 +22,10 @@ export default function WaitlistModal({
 
   const copyToClipboard = async () => {
     try {
-    //   await navigator.clipboard.writeText(`https://qooqs.co.uk?referralCode=${referralLink}`);
-      await navigator.clipboard.writeText(`http://localhost:3000?referralCode=${referralLink}`);
+      //   await navigator.clipboard.writeText(`https://qooqs.co.uk?referralCode=${referralLink}`);
+      await navigator.clipboard.writeText(
+        `http://localhost:3000?referralCode=${WaitlistData?.user?.referralCode}`
+      );
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -70,30 +63,35 @@ export default function WaitlistModal({
             <h2 className="text-2xl font-bold flex items-center justify-center gap-2 mb-1">
               You&apos;re on the waitlist! <PartyPopper className="w-6 h-6" />
             </h2>
-            <p className="text-lg">Your current position is #{position}</p>
+            {/* <p className="text-lg">Your current position is #{position}</p> */}
           </div>
 
           <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
             <div
               className="bg-blue-500 h-2 rounded-full"
-              style={{ width: `${(referralCount / 20) * 100}%` }}
+              style={{
+                width: `${
+                  (WaitlistData?.referralProgress?.referralsCount / 20) * 100
+                }%`,
+              }}
             />
             <p className="text-right text-sm text-gray-500 w-full my-2">
-              {referralCount} of 20
+              {WaitlistData?.referralProgress?.referralsCount} of 20
             </p>
           </div>
 
-          {referralCount < 20 && (
+          {WaitlistData?.referralProgress?.referralsCount < 20 && (
             <p className="text-center text-gray-700">
-              Refer {20 - referralCount} more friends within the next 90 days
-              and unlock lifetime rewards based on their activity!
+              Refer {WaitlistData?.referralProgress?.remaining} more friends
+              within the next 90 days and unlock lifetime rewards based on their
+              activity!
             </p>
           )}
 
           <div className="w-full relative">
             <input
               type="text"
-              value={`http://qooqs.co.uk?referralCode=${referralLink}`}
+              value={`http://qooqs.co.uk?referralCode=${WaitlistData?.user?.referralCode}`}
               readOnly
               className="w-full px-4 py-3 pr-12 border rounded-lg bg-gray-50"
             />
@@ -111,7 +109,7 @@ export default function WaitlistModal({
 
           <div className="flex gap-3 w-full">
             <a
-              href={`https://twitter.com/intent/tweet?url=https://qooqs.co.uk?referralCode=${referralLink}&text=Join the waitlist for Qooqs and get lifetime rewards!`}
+              href={`https://twitter.com/intent/tweet?url=https://qooqs.co.uk?referralCode=${WaitlistData?.user?.referralCode}&text=Join the waitlist for Qooqs and get lifetime rewards!`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center px-4 py-2 rounded-full bg-[#0000001A] hover:bg-[#0000000d]"
@@ -123,11 +121,11 @@ export default function WaitlistModal({
                 height={16}
                 className="w-auto h-[13px] sm:h-[15px]"
               />
-              <p className="text-sm sm:text-base" >Post</p>
+              <p className="text-sm sm:text-base">Post</p>
             </a>
 
             <a
-              href={`https://api.whatsapp.com/send?text=Join the waitlist for Qooqs! Here's my referral link: https://qooqs.co.uk?referralCode=${referralLink}`}
+              href={`https://api.whatsapp.com/send?text=Join the waitlist for Qooqs! Here's my referral link: https://qooqs.co.uk?referralCode=${WaitlistData?.user?.referralCode}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#2CB742] px-4 py-2 rounded-full bg-[#2CB74233] hover:bg-[#2cb74115]"
@@ -143,7 +141,7 @@ export default function WaitlistModal({
             </a>
 
             <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=https://qooqs.co.uk/?referralCode=${referralLink}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://qooqs.co.uk/?referralCode=${WaitlistData?.user?.referralCode}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#3C5997] px-4 py-2 rounded-full bg-[#3C599733] hover:bg-[#3c59971a]"
@@ -159,7 +157,7 @@ export default function WaitlistModal({
             </a>
 
             <a
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://qooqs.co.uk?referralCode=${referralLink}&title=Join Qooqs&summary=Get lifetime rewards with Qooqs!`}
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://qooqs.co.uk?referralCode=${WaitlistData?.user?.referralCode}&title=Join Qooqs&summary=Get lifetime rewards with Qooqs!`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#2767B2] px-4 py-2 rounded-full bg-[#2767B21A] hover:bg-[#2cb7410b]"
@@ -177,7 +175,10 @@ export default function WaitlistModal({
 
           <p className="text-center text-gray-700">
             You have referred{" "}
-            <span className="font-bold">{referralCount} friends</span> so far
+            <span className="font-bold">
+              {WaitlistData?.referralProgress?.referralsCount} friends
+            </span>{" "}
+            so far
           </p>
 
           <div className="w-full">
@@ -192,13 +193,19 @@ export default function WaitlistModal({
                   </tr>
                 </thead>
                 <tbody>
-                  {leaderBoard.map((item) => (
-                    <tr key={item.rank} className="border-b last:border-0">
-                      <td className="py-2">{item.rank}</td>
-                      <td className="py-2">{item.userId}</td>
-                      <td className="py-2">{item.referrals}</td>
-                    </tr>
-                  ))}
+                  {WaitlistData.leaderboard
+                    .sort((a, b) => b.referralsCount - a.referralsCount) // Sort by referralsCount in descending order
+                    .map((item, index) => (
+                      <tr key={item._id} className="border-b last:border-0">
+                        <td className="py-2">{index + 1}</td>{" "}
+                        {/* Assign rank based on index */}
+                        <td className="py-2">{item._id}</td>
+                        {/* <td className="py-2">{item.email}</td> */}
+                        <td className="py-2">{item.referralCode}</td>
+                        <td className="py-2">{item.referralsCount}</td>
+                      </tr>
+                    ))}
+                  s
                 </tbody>
               </table>
             </div>
