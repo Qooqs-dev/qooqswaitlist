@@ -6,7 +6,6 @@ import axios from "axios";
 import { useState } from "react";
 import WaitlistModal from "../modal/WaitlistModal";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
