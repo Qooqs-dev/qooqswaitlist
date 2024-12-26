@@ -76,7 +76,7 @@ const Hero = () => {
             className="hidden sm:block"
           />
           <Image
-            src={"/images/hero-bg2.png"}
+            src={"/images/hero-bg3.png"}
             alt={`Hero Background Image`}
             width={342}
             height={506}

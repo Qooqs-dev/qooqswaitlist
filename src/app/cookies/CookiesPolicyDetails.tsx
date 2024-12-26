@@ -12,7 +12,7 @@ const CookiesPolicyDetails = () => {
             functionality, and collect analytics. This Cookies Policy explains
             what cookies are, how we use them, and your choices regarding their
             use.
-          </p>F
+          </p>
         </div>
 
         {/* Sections */}
@@ -131,7 +131,7 @@ const CookiesPolicyDetails = () => {
                 <strong>Facebook Pixel:</strong> Tracks conversions from
                 Facebook ads.
               </li>
-              <li>[Other third-party services relevant to your project]</li>
+              {/* <li>[Other third-party services relevant to your project]</li> */}
             </ul>
             <p className="text-lg">
               Each third party has its own privacy and cookie policies, which
