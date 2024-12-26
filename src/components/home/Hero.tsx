@@ -21,7 +21,7 @@ const Hero = () => {
           <NotifyMeForm />
 
           <div>
-            <p className="text-white">
+            <p className="font-extralight text-white text-[15px] md:text-base text-center sm:text-left">
               By participating in our waitlist campaign, you confirm that you
               have read, understood, and agreed to the{" "}
               <Link className="font-bold underline" href={"/terms"}>

@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+
 
 const features = [
   {
@@ -66,6 +68,15 @@ const Features = () => {
             </p>
           </div>
         ))}
+      </div>
+
+      <div className="w-full flex flex-row justify-center items-center">
+        <button
+          className="whitespace-nowrap bg-[#5386E4] hover:bg-[#5386e4d6] text-white text-base px-[30px] md:px-[52px] py-[11px] md:py-4 rounded-full w-[196px]"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          Join Waitlist
+        </button>
       </div>
     </div>
   );

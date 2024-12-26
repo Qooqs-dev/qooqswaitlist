@@ -189,6 +189,7 @@ export default function WaitlistModal({
                   <tr>
                     <th className="pb-2">RANK</th>
                     <th className="pb-2">USERID</th>
+                    <th className="pb-2">REFERRAL CODE</th>
                     <th className="pb-2">NO OF REFERRALS</th>
                   </tr>
                 </thead>
@@ -199,13 +200,13 @@ export default function WaitlistModal({
                       <tr key={item._id} className="border-b last:border-0">
                         <td className="py-2">{index + 1}</td>{" "}
                         {/* Assign rank based on index */}
-                        <td className="py-2">{item._id}</td>
+                        <td className="py-2">{item._id.slice(0, 5)}...</td>
                         {/* <td className="py-2">{item.email}</td> */}
                         <td className="py-2">{item.referralCode}</td>
                         <td className="py-2">{item.referralsCount}</td>
                       </tr>
                     ))}
-                  s
+                  
                 </tbody>
               </table>
             </div>
