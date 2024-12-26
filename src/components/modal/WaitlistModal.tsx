@@ -63,7 +63,7 @@ export default function WaitlistModal({
             <h2 className="text-2xl font-bold flex items-center justify-center gap-2 mb-1">
               You&apos;re on the waitlist! <PartyPopper className="w-6 h-6" />
             </h2>
-            {/* <p className="text-lg">Your current position is #{position}</p> */}
+            <p className="text-lg">Your current position is #{WaitlistData?.position}</p>
           </div>
 
           <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
