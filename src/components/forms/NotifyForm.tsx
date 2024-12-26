@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WaitlistModal from "../modal/WaitlistModal";
 import { useSearchParams } from "next/navigation";
 
@@ -28,12 +28,16 @@ const validationSchema = Yup.object({
 
 export default function NotifyMeForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [referralCode, setReferralCode] = useState<string | null>(null);
   const [waitlistData, setWaitlistData] = useState<WaitlistResponse | null>(
     null
   );
 
-  const searchParams = useSearchParams();
-  const referralCode = searchParams.get("referralCode");
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get("referralCode");
+    setReferralCode(code);
+  }, []);
 
   //   const notifyUser = async (email: string) => {
   //     setIsModalOpen(true);
