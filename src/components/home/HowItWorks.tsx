@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const steps = [
   {
@@ -34,9 +35,11 @@ const HowItWorks = () => {
       <div className="flex flex-col md:flex-row gap-8">
         {steps.map((step, index) => (
           <div key={index} className="flex flex-col gap-4 items-left">
-            <img
+            <Image
               src={step.icon}
               alt={`${step.title} Icon`}
+              height={14}
+              width={14}
               className="w-14 h-14"
             />
             <div>

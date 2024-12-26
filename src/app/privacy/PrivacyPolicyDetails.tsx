@@ -7,7 +7,7 @@ const PrivacyPolicyDetails = () => {
         {/* Header */}
         <div>
           <p className="text-lg">
-            Qooqs Operating Company Ltd ("we," "us," or "our") is committed to
+            Qooqs Operating Company Ltd (&quot;we,&quot; &quot;us,&quot; or "&quot;our&quot;) is committed to
             protecting your personal data and respecting your privacy. This
             Privacy Policy explains how we collect, use, store, and protect your
             information when you participate in our waitlist campaign. It also

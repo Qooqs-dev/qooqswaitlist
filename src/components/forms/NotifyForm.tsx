@@ -89,6 +89,7 @@ export default function NotifyMeForm() {
       if (res.status === 200) {
         console.log(res.data);
         toast.success(res.data.response.message);
+        setWaitlistData(null);
       } else {
         toast.error("Failed to subscribe. Please try again.");
       }

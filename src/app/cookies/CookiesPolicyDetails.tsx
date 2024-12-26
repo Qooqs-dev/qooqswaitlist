@@ -7,12 +7,12 @@ const CookiesPolicyDetails = () => {
         {/* Header */}
         <div>
           <p className="text-lg">
-            Qooqs Operating Company Ltd ("we," "us," or "our") uses cookies and
+            Qooqs Operating Company Ltd (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) uses cookies and
             similar technologies to enhance user experience, provide
             functionality, and collect analytics. This Cookies Policy explains
             what cookies are, how we use them, and your choices regarding their
             use.
-          </p>
+          </p>F
         </div>
 
         {/* Sections */}
