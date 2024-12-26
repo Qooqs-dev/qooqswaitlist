@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     images: ["https://qooqs.co.uk/icons/qooqs-logo2.png"],
   },
   icons: {
-    icon: "/icons/qooqs-favicon1.png",
+    icon: "/icons/qooqs-favicon2.png",
   },
 };
 
