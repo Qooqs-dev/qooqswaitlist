@@ -5,6 +5,8 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useState } from "react";
 import WaitlistModal from "../modal/WaitlistModal";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -25,32 +27,33 @@ const validationSchema = Yup.object({
     .required("Email is required"),
 });
 
-// const notifyUser = async (email: string) => {
-//   try {
-//     const res = await axios.post(`${baseUrl}/api/v1/subscriber/subscribe`, {
-//       email,
-//     });
+const notifyUser = async (email: string) => {
+  try {
+    const res = await axios.post(`${baseUrl}/waitlist/join`, {
+      email,
+      referralCode,
+    });
 
-//     if (res.status === 200) {
-//       toast.success(res.data.message);
-//       if (typeof window !== "undefined") {
-//         window.location.replace(res.data.data.link);
-//       }
-//     } else {
-//       toast.error("Failed to subscribe. Please try again.");
-//     }
-//   } catch (error) {
-//     if (axios.isAxiosError(error)) {
-//       // Handle Axios errors
-//       toast.error(
-//         error.response?.data?.message || "An error occurred. Please try again."
-//       );
-//     } else {
-//       // Handle non-Axios errors
-//       toast.error("An unexpected error occurred. Please try again.");
-//     }
-//   }
-// };
+    if (res.status === 200) {
+      toast.success(res.data.message);
+      if (typeof window !== "undefined") {
+        window.location.replace(res.data.data.link);
+      }
+    } else {
+      toast.error("Failed to subscribe. Please try again.");
+    }
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      // Handle Axios errors
+      toast.error(
+        error.response?.data?.message || "An error occurred. Please try again."
+      );
+    } else {
+      // Handle non-Axios errors
+      toast.error("An unexpected error occurred. Please try again.");
+    }
+  }
+};
 
 export default function NotifyMeForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,75 +61,44 @@ export default function NotifyMeForm() {
     null
   );
 
+  const searchParams = useSearchParams();
+  const referralCode = searchParams.get("referralCode");
+
+  //   const notifyUser = async (email: string) => {
+  //     setIsModalOpen(true);
+  //     setWaitlistData({
+  //       position: 4,
+  //       referralLink: "321",
+  //       referralCount: 18,
+  //       leaderBoard: [
+  //         {
+  //           rank: 1,
+  //           userId: "de21",
+  //           referrals: 7,
+  //         },
+  //       ],
+  //     });
+  //   };
+
   const notifyUser = async (email: string) => {
-    setIsModalOpen(true);
-    setWaitlistData({
-      position: 4,
-      referralLink: "321",
-      referralCount: 18,
-      leaderBoard: [
-        {
-          rank: 1,
-          userId: "de21",
-          referrals: 7,
-        },
-        {
-          rank: 2,
-          userId: "11w3e",
-          referrals: 5,
-        },
-        {
-          rank: 3,
-          userId: "11w3e",
-          referrals: 3,
-        },
-        {
-          rank: 4,
-          userId: "w3ewq",
-          referrals: 1,
-        },
-        {
-            rank: 1,
-            userId: "de21",
-            referrals: 7,
-          },
-          {
-            rank: 2,
-            userId: "11w3e",
-            referrals: 5,
-          },
-          {
-            rank: 3,
-            userId: "11w3e",
-            referrals: 3,
-          },
-          {
-            rank: 4,
-            userId: "w3ewq",
-            referrals: 1,
-          },
-          {
-            rank: 1,
-            userId: "de21",
-            referrals: 7,
-          },
-          {
-            rank: 2,
-            userId: "11w3e",
-            referrals: 5,
-          },
-          {
-            rank: 3,
-            userId: "11w3e",
-            referrals: 3,
-          },
-          {
-            rank: 4,
-            userId: "w3ewq",
-            referrals: 1,
-          },
-      ],
-    });
+    try {
+      const res = await axios.post(`${baseUrl}/waitlist/join`, {
+        email,
+        referralCode,
+      });
+
+      if (res.status === 200) {
+        console.log(res.data);
+        toast.success(res.data.response.message);
+      } else {
+        toast.error("Failed to subscribe. Please try again.");
+      }
+    } catch (error:any) {
+        console.log(error);
+        console.log(error.response.data.response.message);
+        toast.error(error.response.data.response.message);
+      
+    }
   };
 
   return (

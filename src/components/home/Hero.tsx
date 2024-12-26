@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import NotifyMeForm from "../forms/NotifyForm";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -19,7 +20,25 @@ const Hero = () => {
 
           <NotifyMeForm />
 
-          <div className="flex flex-row gap-2 items-center">
+          <div>
+            <p className="text-white">
+              By participating in our waitlist campaign, you confirm that you
+              have read, understood, and agreed to the{" "}
+              <Link className="font-bold underline" href={"/terms"}>
+                Terms and Conditions
+              </Link>
+              ,{" "}
+              <Link className="font-bold underline" href={"/privacy"}>
+                Privacy Policy
+              </Link>
+              , and {" "}
+              <Link className="font-bold underline" href={"/cookies"}>
+                Cookies Policy
+              </Link>{" "}
+            </p>
+          </div>
+
+          {/* <div className="flex flex-row gap-2 items-center">
             <Image
               src={"/icons/hero-star.svg"}
               alt={`Hero Star Icon`}
@@ -46,7 +65,7 @@ const Hero = () => {
                 </svg>
               </span>
             </p>
-          </div>
+          </div> */}
         </div>
         <div>
           <Image

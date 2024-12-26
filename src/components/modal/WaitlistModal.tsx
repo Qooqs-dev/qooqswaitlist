@@ -31,7 +31,8 @@ export default function WaitlistModal({
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(`http://qooqs.co.uk/${referralLink}`);
+    //   await navigator.clipboard.writeText(`https://qooqs.co.uk?referralCode=${referralLink}`);
+      await navigator.clipboard.writeText(`http://localhost:3000?referralCode=${referralLink}`);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -92,7 +93,7 @@ export default function WaitlistModal({
           <div className="w-full relative">
             <input
               type="text"
-              value={`http://qooqs.co.uk/${referralLink}`}
+              value={`http://qooqs.co.uk?referralCode=${referralLink}`}
               readOnly
               className="w-full px-4 py-3 pr-12 border rounded-lg bg-gray-50"
             />
@@ -110,7 +111,7 @@ export default function WaitlistModal({
 
           <div className="flex gap-3 w-full">
             <a
-              href={`https://twitter.com/intent/tweet?url=http://qooqs.co.uk/${referralLink}&text=Join the waitlist for Qooqs and get lifetime rewards!`}
+              href={`https://twitter.com/intent/tweet?url=https://qooqs.co.uk?referralCode=${referralLink}&text=Join the waitlist for Qooqs and get lifetime rewards!`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center px-4 py-2 rounded-full bg-[#0000001A] hover:bg-[#0000000d]"
@@ -120,13 +121,13 @@ export default function WaitlistModal({
                 alt={"Twitter Logo"}
                 width={17}
                 height={16}
-                className="w-auto h-[16px]"
+                className="w-auto h-[13px] sm:h-[15px]"
               />
-              <p>Post</p>
+              <p className="text-sm sm:text-base" >Post</p>
             </a>
 
             <a
-              href={`https://api.whatsapp.com/send?text=Join the waitlist for Qooqs! Here's my referral link: http://qooqs.co.uk/${referralLink}`}
+              href={`https://api.whatsapp.com/send?text=Join the waitlist for Qooqs! Here's my referral link: https://qooqs.co.uk?referralCode=${referralLink}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#2CB742] px-4 py-2 rounded-full bg-[#2CB74233] hover:bg-[#2cb74115]"
@@ -136,13 +137,13 @@ export default function WaitlistModal({
                 alt={"WhatsApp Logo"}
                 width={17}
                 height={16}
-                className="w-auto h-[16px]"
+                className="w-auto h-[13px] sm:h-[15px]"
               />
-              <p>Share</p>
+              <p className="text-sm sm:text-base">Share</p>
             </a>
 
             <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=http://qooqs.co.uk/${referralLink}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://qooqs.co.uk/?referralCode=${referralLink}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#3C5997] px-4 py-2 rounded-full bg-[#3C599733] hover:bg-[#3c59971a]"
@@ -152,13 +153,13 @@ export default function WaitlistModal({
                 alt={"Facebook Logo"}
                 width={17}
                 height={16}
-                className="w-auto h-[16px]"
+                className="w-auto h-[13px] sm:h-[15px]"
               />
-              <p>Share</p>
+              <p className="text-sm sm:text-base">Share</p>
             </a>
 
             <a
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=http://qooqs.co.uk/${referralLink}&title=Join Qooqs&summary=Get lifetime rewards with Qooqs!`}
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://qooqs.co.uk?referralCode=${referralLink}&title=Join Qooqs&summary=Get lifetime rewards with Qooqs!`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#2767B2] px-4 py-2 rounded-full bg-[#2767B21A] hover:bg-[#2cb7410b]"
@@ -168,9 +169,9 @@ export default function WaitlistModal({
                 alt={"LinkedIn Logo"}
                 width={17}
                 height={16}
-                className="w-auto h-[16px]"
+                className="w-auto h-[13px] sm:h-[15px]"
               />
-              <p>Share</p>
+              <p className="text-sm sm:text-base">Share</p>
             </a>
           </div>
 

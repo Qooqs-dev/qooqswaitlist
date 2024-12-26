@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 
 // Metadata for the entire app
@@ -70,6 +71,7 @@ export default function RootLayout({
       <body
         className={` antialiased`}
       >
+         <Toaster position="top-center" reverseOrder={false} />
         {children}
       </body>
     </html>
