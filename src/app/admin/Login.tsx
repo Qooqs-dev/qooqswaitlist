@@ -39,8 +39,19 @@ const Login = () => {
       } else {
         toast.error("Login failed. Please check your credentials.");
       }
-    } catch (error: any) {
-      toast.error(error.response?.data?.message || "An error occurred.");
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Handle Axios-specific errors
+        console.log(error);
+        console.log(error.response?.data?.response?.message);
+        toast.error(
+          error.response?.data?.response?.message || "An error occurred"
+        );
+      } else {
+        // Handle non-Axios errors
+        console.error("Unexpected error:", error);
+        toast.error("An unexpected error occurred. Please try again.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -48,7 +59,9 @@ const Login = () => {
 
   return (
     <div className="w-11/12 sm:w-[500px] max-w-screen-xl mx-auto border-t border-[#EAEAEA] pt-[40px] pb-[70px]">
-      <h2 className="text-xl font-bold mb-4 text-center">Kindly login to Admin Account</h2>
+      <h2 className="text-xl font-bold mb-4 text-center">
+        Kindly login to Admin Account
+      </h2>
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={validationSchema}

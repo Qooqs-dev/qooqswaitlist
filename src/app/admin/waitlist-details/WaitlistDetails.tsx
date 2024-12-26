@@ -48,8 +48,20 @@ const WaitlistDetails = () => {
         }
       );
       setWaitlistData(res.data.response.data);
-    } catch (error: any) {
-      toast.error("Failed to fetch waitlist data.");
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Handle Axios-specific errors
+        console.log(error);
+        console.log(error.response?.data?.response?.message);
+        toast.error(
+          error.response?.data?.response?.message || "An error occurred"
+        );
+      } else {
+        // Handle non-Axios errors
+        console.error("Unexpected error:", error);
+        toast.error("An unexpected error occurred. Please try again.");
+      }
+
       localStorage.removeItem("authToken");
       router.push("/admin"); // Redirect to login page
     }
@@ -72,8 +84,18 @@ const WaitlistDetails = () => {
       setWaitlistData(res.data.response.data);
       toast.success("Search completed successfully!");
     } catch (error: any) {
-      console.log(error);
-      toast.error(error.response?.data?.response?.message);
+      if (axios.isAxiosError(error)) {
+        // Handle Axios-specific errors
+        console.log(error);
+        console.log(error.response?.data?.response?.message);
+        toast.error(
+          error.response?.data?.response?.message || "An error occurred"
+        );
+      } else {
+        // Handle non-Axios errors
+        console.error("Unexpected error:", error);
+        toast.error("An unexpected error occurred. Please try again.");
+      }
     }
   };
 
@@ -94,8 +116,19 @@ const WaitlistDetails = () => {
       link.remove();
 
       toast.success("Export successful!");
-    } catch (error: any) {
-      toast.error("Failed to export waitlist data.");
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Handle Axios-specific errors
+        console.log(error);
+        console.log(error.response?.data?.response?.message);
+        toast.error(
+          error.response?.data?.response?.message || "An error occurred"
+        );
+      } else {
+        // Handle non-Axios errors
+        console.error("Unexpected error:", error);
+        toast.error("An unexpected error occurred. Please try again.");
+      }
     }
   };
 
