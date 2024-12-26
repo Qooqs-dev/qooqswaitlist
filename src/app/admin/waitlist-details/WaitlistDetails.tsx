@@ -84,7 +84,7 @@ const WaitlistDetails = () => {
       });
       setWaitlistData(res.data.response.data);
       toast.success("Search completed successfully!");
-    } catch (error: any) {
+    } catch (error) {
       if (axios.isAxiosError(error)) {
         // Handle Axios-specific errors
         console.log(error);
