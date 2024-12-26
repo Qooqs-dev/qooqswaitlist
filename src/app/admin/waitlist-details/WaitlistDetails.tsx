@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useCallback} from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
@@ -28,8 +28,7 @@ const WaitlistDetails = () => {
   const router = useRouter();
 
 
-
-  const fetchWaitlistData = async (token: string) => {
+  const fetchWaitlistData = useCallback(async (token: string) => {
     try {
       const res = await axios.get(
         `${baseUrl}/admin/waitlist/get-all-waitlist`,
@@ -40,14 +39,12 @@ const WaitlistDetails = () => {
       setWaitlistData(res.data.response.data);
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        // Handle Axios-specific errors
         console.log(error);
         console.log(error.response?.data?.response?.message);
         toast.error(
           error.response?.data?.response?.message || "An error occurred"
         );
       } else {
-        // Handle non-Axios errors
         console.error("Unexpected error:", error);
         toast.error("An unexpected error occurred. Please try again.");
       }
@@ -55,20 +52,8 @@ const WaitlistDetails = () => {
       localStorage.removeItem("authToken");
       router.push("/admin"); // Redirect to login page
     }
-  };
+  }, [router]);
 
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
-
-    if (!token) {
-      toast.error("You must be logged in to access this page.");
-      router.push("/admin"); // Redirect to login page
-    } else {
-      setAuthToken(token);
-      fetchWaitlistData(token);
-    }
-  }, [fetchWaitlistData, router]); 
-  
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     setAuthToken(null);
