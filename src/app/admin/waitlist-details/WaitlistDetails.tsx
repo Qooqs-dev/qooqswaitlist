@@ -27,17 +27,7 @@ const WaitlistDetails = () => {
   });
   const router = useRouter();
 
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
 
-    if (!token) {
-      toast.error("You must be logged in to access this page.");
-      router.push("/"); // Redirect to login page
-    } else {
-      setAuthToken(token);
-      fetchWaitlistData(token);
-    }
-  }, []);
 
   const fetchWaitlistData = async (token: string) => {
     try {
@@ -67,6 +57,18 @@ const WaitlistDetails = () => {
     }
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+
+    if (!token) {
+      toast.error("You must be logged in to access this page.");
+      router.push("/admin"); // Redirect to login page
+    } else {
+      setAuthToken(token);
+      fetchWaitlistData(token);
+    }
+  }, [fetchWaitlistData, router]); 
+  
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     setAuthToken(null);
