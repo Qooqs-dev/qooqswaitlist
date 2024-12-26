@@ -21,7 +21,7 @@ const Hero = () => {
           <NotifyMeForm />
 
           <div>
-            <p className="font-extralight text-white text-[15px] md:text-base text-center sm:text-left">
+            <p className="font-extralight text-white text-[17px] md:text-lg text-center sm:text-left">
               By participating in our waitlist campaign, you confirm that you
               have read, understood, and agreed to the{" "}
               <Link className="font-bold underline" href={"/terms"}>
@@ -46,7 +46,7 @@ const Hero = () => {
               height={20}
               className="h-5 w-5 md:h-8 md:w-8"
             />
-            <p className=" text-white text-[15px] md:text-base font-extralight">
+            <p className=" text-white text-[17px] md:text-lg font-extralight">
               Earn the right to be one of 1,000 to enjoy benefit of{" "}
               <span className="relative inline-block font-extrabold">
                 referring once and earning for life
