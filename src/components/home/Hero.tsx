@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className="bg-[#5386E4]">
       <div className="w-11/12 max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center gap-14 py-[70px]">
-        <div className="flex flex-col gap-5 w-full md:w-7/12">
+        <div className="flex relative flex-col gap-5 w-full md:w-7/12">
           <h2 className="text-center md:text-left text-white text-[32px] md:text-[35px] lg:text-[40px] xl:text-[45px] 2xl:text-[50px] leading-tight font-extrabold">
             Your affordable and fresh Asian, African and Caribbean groceries
             with free delivery
@@ -66,6 +66,28 @@ const Hero = () => {
               </span>
             </p>
           </div>
+          <Image
+            src={"/images/cassava.svg"}
+            alt={`Cassava Image`}
+            width={104}
+            height={93}
+            className="w-[70px] block md:hidden absolute -left-[10px] -top-[50px]"
+          />
+          <Image
+            src={"/images/banana.svg"}
+            alt={`Banana Image`}
+            width={104}
+            height={96}
+            className="w-[70px] block md:hidden absolute -right-[10px] -top-[40px]"
+          />
+
+          <Image
+            src={"/images/fish.svg"}
+            alt={`Fish Image`}
+            width={104}
+            height={65}
+            className="w-[85px] block md:hidden absolute right-[0px]  bottom-[0%]"
+          />
         </div>
         <div>
           <Image
