@@ -71,14 +71,14 @@ const Hero = () => {
             alt={`Cassava Image`}
             width={104}
             height={93}
-            className="w-[70px] block md:hidden absolute -left-[10px] -top-[50px]  -z-10"
+            className="w-[70px] block md:hidden absolute -left-[10px] -top-[50px]"
           />
           <Image
             src={"/images/banana.svg"}
             alt={`Banana Image`}
             width={104}
             height={96}
-            className="w-[70px] block md:hidden absolute -right-[10px] -top-[45px]  -z-10"
+            className="w-[70px] block md:hidden absolute -right-[10px] -top-[45px]"
           />
 
           <Image
@@ -86,7 +86,7 @@ const Hero = () => {
             alt={`Fish Image`}
             width={104}
             height={65}
-            className="w-[60px] block md:hidden absolute right-[0px]  -bottom-[30px] -z-10"
+            className="w-[80px] block md:hidden absolute right-[0px]  -bottom-[30px]"
           />
         </div>
         <div>
