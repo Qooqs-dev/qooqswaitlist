@@ -244,54 +244,56 @@ const WaitlistDetails = () => {
           Export
         </button>
       </form>
-
-      <table className="mt-5 table-auto w-full border-collapse border border-gray-300">
-        <thead>
-          <tr>
-            <th className="border border-gray-300 px-4 py-2 font-extrabold">
-              S/N
-            </th>
-            <th className="border border-gray-300 px-4 py-2 font-extrabold">
-              ID
-            </th>
-            <th className="border border-gray-300 px-4 py-2 font-extrabold">
-              Email
-            </th>
-            <th className="border border-gray-300 px-4 py-2 font-extrabold">
-              Referral Code
-            </th>
-            <th className="border border-gray-300 px-4 py-2 font-extrabold">
-              Created At
-            </th>
-            <th className="border border-gray-300 px-4 py-2 font-extrabold">
-              Referrals
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {waitlistData.map((entry, index) => (
-            <tr key={entry._id}>
-              <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
-              <td className="border border-gray-300 px-4 py-2">
-              
-                {entry._id}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {entry.email}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {entry.referralCode}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {new Date(entry.createdAt).toLocaleDateString()}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {entry.referralsCount}
-              </td>
+      <div className="overflow-x-auto mt-8 pb-3 md:pb-0 sm:mt-0">
+        <table className=" table-auto w-full border-collapse border border-gray-300">
+          <thead>
+            <tr>
+              <th className="border border-gray-300 px-4 py-2 font-extrabold">
+                S/N
+              </th>
+              <th className="border border-gray-300 px-4 py-2 font-extrabold">
+                ID
+              </th>
+              <th className="border border-gray-300 px-4 py-2 font-extrabold">
+                Email
+              </th>
+              <th className="border border-gray-300 px-4 py-2 font-extrabold">
+                Referral Code
+              </th>
+              <th className="border border-gray-300 px-4 py-2 font-extrabold">
+                Created At
+              </th>
+              <th className="border border-gray-300 px-4 py-2 font-extrabold">
+                Referrals
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {waitlistData.map((entry, index) => (
+              <tr key={entry._id}>
+                <td className="border border-gray-300 px-4 py-2">
+                  {index + 1}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {entry._id}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {entry.email}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {entry.referralCode}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {new Date(entry.createdAt).toLocaleDateString()}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {entry.referralsCount}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
