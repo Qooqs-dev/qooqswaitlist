@@ -150,9 +150,9 @@ const WaitlistDetails = () => {
           e.preventDefault();
           handleSearch();
         }}
-        className="flex flex-col sm:flex-row gap-4 mb-4 items-end"
+        className="flex flex-col sm:flex-row gap-4 mb-4 items-start sm:items-end w-full sm:w-fit"
       >
-        <div>
+        <div className="w-full sm:w-fit">
           <label htmlFor="email" className="block text-sm font-medium mb-1">
             Email
           </label>
@@ -167,7 +167,7 @@ const WaitlistDetails = () => {
             }
           />
         </div>
-        <div>
+        <div className="w-full sm:w-fit">
           <label htmlFor="startDate" className="block text-sm font-medium mb-1">
             Start Date
           </label>
@@ -181,7 +181,7 @@ const WaitlistDetails = () => {
             }
           />
         </div>
-        <div>
+        <div className="w-full sm:w-fit">
           <label htmlFor="endDate" className="block text-sm font-medium mb-1">
             End Date
           </label>
@@ -195,7 +195,7 @@ const WaitlistDetails = () => {
             }
           />
         </div>
-        <div>
+        <div className="w-full sm:w-fit">
           <label
             htmlFor="minReferrals"
             className="block text-sm font-medium mb-1"
@@ -213,7 +213,7 @@ const WaitlistDetails = () => {
             }
           />
         </div>
-        <div>
+        <div className="w-full sm:w-fit">
           <label
             htmlFor="maxReferrals"
             className="block text-sm font-medium mb-1"
@@ -233,19 +233,19 @@ const WaitlistDetails = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-6 sm:mt-0 h-fit"
+          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-6 sm:mt-0 h-fit w-full sm:w-fit"
         >
           Search
         </button>
         <button
           onClick={handleExport}
-          className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded mt-6 sm:mt-0 h-fit"
+          className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded mt-0 h-fit w-full sm:w-fit"
         >
           Export
         </button>
       </form>
 
-      <table className="table-auto w-full border-collapse border border-gray-300">
+      <table className="mt-5 table-auto w-full border-collapse border border-gray-300">
         <thead>
           <tr>
             <th className="border border-gray-300 px-4 py-2 font-extrabold">
@@ -273,7 +273,7 @@ const WaitlistDetails = () => {
             <tr key={entry._id}>
               <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
               <td className="border border-gray-300 px-4 py-2">
-                {/* {entry._id.substring(0, 5)}... */}
+              
                 {entry._id}
               </td>
               <td className="border border-gray-300 px-4 py-2">
