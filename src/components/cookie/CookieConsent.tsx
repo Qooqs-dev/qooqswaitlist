@@ -95,7 +95,7 @@ export default function CookieConsent() {
           technologies (&quot;Cookies&quot;) as outlined in our privacy policy. You can
           explore each category below for detailed information. At any time, you
           may revisit this page using the same browser to adjust your
-          preferences. Note that clearing your browser's cookies will reset
+          preferences. Note that clearing your browser&quot;s cookies will reset
           these settings.
         </p>
 
