@@ -2,7 +2,7 @@
 
 import { X, Copy, PartyPopper } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { WaitlistData } from "../../../types/waitlist.types";
 
 interface WaitlistModalProps {
@@ -17,6 +17,28 @@ export default function WaitlistModal({
   WaitlistData,
 }: WaitlistModalProps) {
   const [copied, setCopied] = useState(false);
+  const [daysRemaining, setDaysRemaining] = useState(0);
+
+  // Function to calculate the number of days remaining until January 1, 2025
+  const calculateDaysRemaining = () => {
+    const today = new Date();
+    const endDate = new Date("2025-04-01T00:00:00");
+    const timeDiff = endDate.getTime() - today.getTime();
+    const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return daysDiff;
+  };
+
+  // Effect to initialize and update the countdown every day
+  useEffect(() => {
+    setDaysRemaining(calculateDaysRemaining());
+
+    const timer = setInterval(() => {
+      setDaysRemaining(calculateDaysRemaining());
+    }, 86400000); // Update every 24 hours
+
+    return () => clearInterval(timer); // Cleanup the interval on component unmount
+  }, []);
+
 
   if (!isOpen) return null;
 
@@ -83,7 +105,7 @@ export default function WaitlistModal({
           {WaitlistData?.referralProgress?.referralsCount < 20 && (
             <p className="text-center text-gray-700">
               Refer {WaitlistData?.referralProgress?.remaining} more friends
-              within the next 90 days and unlock lifetime rewards based on their
+              within the next {daysRemaining} days and unlock lifetime rewards based on their
               activity!
             </p>
           )}

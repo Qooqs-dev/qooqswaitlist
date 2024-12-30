@@ -78,10 +78,18 @@ const WaitlistDetails = () => {
 
   const handleSearch = async () => {
     try {
+      const params: Record<string, string> = {};
+      Object.keys(searchParams).forEach((key) => {
+        if (searchParams[key as keyof typeof searchParams]) {
+          params[key] = searchParams[key as keyof typeof searchParams];
+        }
+      });
+
       const res = await axios.get(`${baseUrl}/admin/waitlist/search`, {
         headers: { Authorization: `Bearer ${authToken}` },
-        params: searchParams,
+        params,
       });
+
       setWaitlistData(res.data.response.data);
       toast.success("Search completed successfully!");
     } catch (error) {

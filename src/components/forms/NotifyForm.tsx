@@ -78,7 +78,7 @@ export default function NotifyMeForm() {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                className="focus:outline-none focus:ring-0 focus:ring-none border border-white text-white bg-[#5386E4]  px-4 py-[11px] md:py-4 text-base rounded-full w-full placeholder-white"
+                className="font-light caret-white focus:outline-none focus:ring-0 focus:ring-none border border-white text-white bg-[#5386E4]  px-4 py-[11px] md:py-4 text-base rounded-full w-full placeholder-white"
               />
 
               <button
