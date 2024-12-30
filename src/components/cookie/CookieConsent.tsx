@@ -92,7 +92,7 @@ export default function CookieConsent() {
         {/* Description */}
         <p className="text-sm text-gray-600">
           Please choose your preference regarding our use of cookies and related
-          technologies ("Cookies") as outlined in our privacy policy. You can
+          technologies (&quot;Cookies&quot;) as outlined in our privacy policy. You can
           explore each category below for detailed information. At any time, you
           may revisit this page using the same browser to adjust your
           preferences. Note that clearing your browser's cookies will reset
