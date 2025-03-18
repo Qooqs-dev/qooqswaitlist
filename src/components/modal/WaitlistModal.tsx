@@ -11,7 +11,7 @@ interface WaitListModalProps {
   waitListData: WaitListData;
 }
 
-export default function WaitListModal({
+export default function WaitlistModal({
   isOpen,
   onClose,
   waitListData,

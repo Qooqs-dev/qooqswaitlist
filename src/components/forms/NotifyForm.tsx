@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { WaitListData } from "../../../types/waitlist.types";
-import WaitListModal from "@/components/modal/WaitListModal";
+import WaitlistModal from "../modal/WaitlistModal";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -100,7 +100,7 @@ export default function NotifyMeForm() {
       </Formik>
 
       {isModalOpen && waitListData && (
-        <WaitListModal
+        <WaitlistModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           waitListData={waitListData}
