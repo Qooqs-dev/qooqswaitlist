@@ -34,8 +34,9 @@ export default function WaitlistModal({
 
     const timer = setInterval(() => {
       setDaysRemaining(calculateDaysRemaining());
-    }, 86400000); // Update every 24 hours
-
+    // }, 86400000); // Update every 24 hours
+  }, 1000); // Update every 24 hours
+  
     return () => clearInterval(timer); // Cleanup the interval on component unmount
   }, []);
 
