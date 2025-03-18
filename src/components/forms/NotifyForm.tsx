@@ -4,8 +4,8 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import WaitListModal from "../modal/WaitListModal";
 import { WaitListData } from "../../../types/waitlist.types";
+import WaitListModal from "../modal/WaitListModal";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
