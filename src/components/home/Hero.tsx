@@ -22,7 +22,7 @@ const Hero = () => {
 
           <div>
             <p className="font-extralight text-white text-[17px] md:text-lg text-center sm:text-left">
-              By participating in our waitlist campaign, you confirm that you
+              By participating in our wait list campaign, you confirm that you
               have read, understood, and agreed to the{" "}
               <Link className="font-bold underline" href={"/terms"}>
                 Terms and Conditions
