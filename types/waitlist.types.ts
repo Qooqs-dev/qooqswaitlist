@@ -26,7 +26,7 @@ interface LeaderboardEntry {
   }
   
   // Type for the entire response structure
-  export interface WaitlistData {
+  export interface WaitListData {
     leaderboard: LeaderboardEntry[];
     position: number;
     referralCode: string;

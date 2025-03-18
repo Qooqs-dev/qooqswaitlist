@@ -4,8 +4,8 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import WaitlistModal from "../modal/WaitlistModal";
-import { WaitlistData } from "../../../types/waitlist.types";
+import WaitListModal from "../modal/WaitListModal";
+import { WaitListData } from "../../../types/waitlist.types";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -18,7 +18,7 @@ const validationSchema = Yup.object({
 export default function NotifyMeForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [referralCode, setReferralCode] = useState<string | null>(null);
-  const [waitlistData, setWaitlistData] = useState<WaitlistData | null>(null);
+  const [waitListData, setWaitListData] = useState<WaitListData | null>(null);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -37,7 +37,7 @@ export default function NotifyMeForm() {
 
         setIsModalOpen(true);
         toast.success(res.data.response.message);
-        setWaitlistData(res.data.response.data);
+        setWaitListData(res.data.response.data);
 
         console.log(res.data.response.data);
 
@@ -99,11 +99,11 @@ export default function NotifyMeForm() {
         )}
       </Formik>
 
-      {isModalOpen && waitlistData && (
-        <WaitlistModal
+      {isModalOpen && waitListData && (
+        <WaitListModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          WaitlistData={waitlistData}
+          waitListData={waitListData}
         />
       )}
     </div>

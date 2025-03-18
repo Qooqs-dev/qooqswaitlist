@@ -3,26 +3,26 @@
 import { X, Copy, PartyPopper } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { WaitlistData } from "../../../types/waitlist.types";
+import { WaitListData } from "../../../types/waitlist.types";
 
-interface WaitlistModalProps {
+interface WaitListModalProps {
   isOpen: boolean;
   onClose: () => void;
-  WaitlistData: WaitlistData;
+  waitListData: WaitListData;
 }
 
-export default function WaitlistModal({
+export default function WaitListModal({
   isOpen,
   onClose,
-  WaitlistData,
-}: WaitlistModalProps) {
+  waitListData,
+}: WaitListModalProps) {
   const [copied, setCopied] = useState(false);
   const [daysRemaining, setDaysRemaining] = useState(0);
 
   // Function to calculate the number of days remaining until January 1, 2025
   const calculateDaysRemaining = () => {
     const today = new Date();
-    const endDate = new Date("2025-04-01T00:00:00");
+    const endDate = new Date("2025-06-18T00:00:00");
     const timeDiff = endDate.getTime() - today.getTime();
     const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
     return daysDiff;
@@ -46,7 +46,7 @@ export default function WaitlistModal({
     try {
       //   await navigator.clipboard.writeText(`https://qooqs.co.uk?referralCode=${referralLink}`);
       await navigator.clipboard.writeText(
-        `http://localhost:3000?referralCode=${WaitlistData?.user?.referralCode}`
+        `http://localhost:3000?referralCode=${waitListData?.user?.referralCode}`
       );
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -83,9 +83,9 @@ export default function WaitlistModal({
 
           <div className="text-center">
             <h2 className="text-2xl font-bold flex items-center justify-center gap-2 mb-1">
-              You&apos;re on the waitlist! <PartyPopper className="w-6 h-6" />
+              You&apos;re on the WaitList! <PartyPopper className="w-6 h-6" />
             </h2>
-            <p className="text-lg">Your current position is #{WaitlistData?.position}</p>
+            <p className="text-lg">Your current position is #{waitListData?.position}</p>
           </div>
 
           <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
@@ -93,18 +93,18 @@ export default function WaitlistModal({
               className="bg-blue-500 h-2 rounded-full"
               style={{
                 width: `${
-                  (WaitlistData?.referralProgress?.referralsCount / 20) * 100
+                  (waitListData?.referralProgress?.referralsCount / 20) * 100
                 }%`,
               }}
             />
             <p className="text-right text-sm text-gray-500 w-full my-2">
-              {WaitlistData?.referralProgress?.referralsCount} of 20
+              {waitListData?.referralProgress?.referralsCount} of 20
             </p>
           </div>
 
-          {WaitlistData?.referralProgress?.referralsCount < 20 && (
+          {waitListData?.referralProgress?.referralsCount < 20 && (
             <p className="text-center text-gray-700">
-              Refer {WaitlistData?.referralProgress?.remaining} more friends
+              Refer {waitListData?.referralProgress?.remaining} more friends
               within the next {daysRemaining} days and unlock lifetime rewards based on their
               activity!
             </p>
@@ -113,7 +113,7 @@ export default function WaitlistModal({
           <div className="w-full relative">
             <input
               type="text"
-              value={`http://qooqs.co.uk?referralCode=${WaitlistData?.user?.referralCode}`}
+              value={`http://qooqs.co.uk?referralCode=${waitListData?.user?.referralCode}`}
               readOnly
               className="w-full px-4 py-3 pr-12 border rounded-lg bg-gray-50"
             />
@@ -131,7 +131,7 @@ export default function WaitlistModal({
 
           <div className="flex gap-3 w-full">
             <a
-              href={`https://twitter.com/intent/tweet?url=https://qooqs.co.uk?referralCode=${WaitlistData?.user?.referralCode}&text=Join the waitlist for Qooqs and get lifetime rewards!`}
+              href={`https://twitter.com/intent/tweet?url=https://qooqs.co.uk?referralCode=${waitListData?.user?.referralCode}&text=Join the WaitList for Qooqs and get lifetime rewards!`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center px-4 py-2 rounded-full bg-[#0000001A] hover:bg-[#0000000d]"
@@ -147,7 +147,7 @@ export default function WaitlistModal({
             </a>
 
             <a
-              href={`https://api.whatsapp.com/send?text=Join the waitlist for Qooqs! Here's my referral link: https://qooqs.co.uk?referralCode=${WaitlistData?.user?.referralCode}`}
+              href={`https://api.whatsapp.com/send?text=Join the WaitList for Qooqs! Here's my referral link: https://qooqs.co.uk?referralCode=${waitListData?.user?.referralCode}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#2CB742] px-4 py-2 rounded-full bg-[#2CB74233] hover:bg-[#2cb74115]"
@@ -163,7 +163,7 @@ export default function WaitlistModal({
             </a>
 
             <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=https://qooqs.co.uk/?referralCode=${WaitlistData?.user?.referralCode}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://qooqs.co.uk/?referralCode=${waitListData?.user?.referralCode}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#3C5997] px-4 py-2 rounded-full bg-[#3C599733] hover:bg-[#3c59971a]"
@@ -179,7 +179,7 @@ export default function WaitlistModal({
             </a>
 
             <a
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://qooqs.co.uk?referralCode=${WaitlistData?.user?.referralCode}&title=Join Qooqs&summary=Get lifetime rewards with Qooqs!`}
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://qooqs.co.uk?referralCode=${waitListData?.user?.referralCode}&title=Join Qooqs&summary=Get lifetime rewards with Qooqs!`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row gap-1 justify-center items-center text-[#2767B2] px-4 py-2 rounded-full bg-[#2767B21A] hover:bg-[#2cb7410b]"
@@ -198,7 +198,7 @@ export default function WaitlistModal({
           <p className="text-center text-gray-700">
             You have referred{" "}
             <span className="font-bold">
-              {WaitlistData?.referralProgress?.referralsCount} friends
+              {waitListData?.referralProgress?.referralsCount} friends
             </span>{" "}
             so far
           </p>
@@ -216,7 +216,7 @@ export default function WaitlistModal({
                   </tr>
                 </thead>
                 <tbody>
-                  {WaitlistData.leaderboard
+                  {waitListData.leaderboard
                     .sort((a, b) => b.referralsCount - a.referralsCount) // Sort by referralsCount in descending order
                     .map((item, index) => (
                       <tr key={item._id} className="border-b last:border-0">
