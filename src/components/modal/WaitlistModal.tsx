@@ -45,10 +45,10 @@ export default function WaitlistModal({
 
   const copyToClipboard = async () => {
     try {
-      //   await navigator.clipboard.writeText(`https://qooqs.co.uk?referralCode=${referralLink}`);
-      await navigator.clipboard.writeText(
-        `http://localhost:3000?referralCode=${waitListData?.user?.referralCode}`
-      );
+        await navigator.clipboard.writeText(`https://qooqs.co.uk?referralCode=${waitListData?.user?.referralCode}`);
+      // await navigator.clipboard.writeText(
+      //   `http://localhost:3000?referralCode=${waitListData?.user?.referralCode}`
+      // );
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
